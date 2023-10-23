@@ -1,0 +1,30 @@
+import json
+import boto3
+
+s3 = boto3.client("s3")
+
+def lambda_handler(event, context):
+    
+    
+    #the following lines are written in order to read the results.txt object file and get the content inside.
+    S3_BUCKET = event['bucket']
+    object_key = event['key']
+    
+    try:
+        response = s3.get_object(Bucket=S3_BUCKET, Key=object_key)
+        print("CONTENT TYPE: " + response['ContentType'])
+        return response[u'Body'].read()
+        
+    except Exception as e:
+        print(e)
+        print('desole ')
+        raise 
+    
+
+    return {
+        'statusCode': 200,
+        'body': response,
+        "headers":{
+            'Content-Type':'text/html',
+        }
+    }
