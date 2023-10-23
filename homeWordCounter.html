@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Comptez le nombre de mots de votre document-sans stress et gratuitement!!</title>
+
+	<!--CSS code-->
+	<style>
+    body {
+        background-color: #2323TE;
+        }
+    label, button {
+        color: #FF9900;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 40px;
+        }
+     input {
+        color: #232F3E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 20px;
+        }
+    </style>
+  
+</head>
+
+<body>
+	<h2>Choisissez votre fichier dans votre ordinateur et joignez-le</h2>
+	
+	<form method="post" enctype="multipart/form-data", action="https://mxw67g56m0.execute-api.us-east-1.amazonaws.com/dev/upload">
+	<label> Choose the File to upload: </label>
+	<input type="file" name="file"> <br /><br />
+	
+	<input type="submit" name="submit" value="Upload" >
+	</form>
+</body>
+
+</html>
